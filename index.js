@@ -1,8 +1,11 @@
 
-
+const express = require('express')
+const app = express();
 require('dotenv').config();
 
-
+app.get('/',(req,res)=>{
+	res.send("Hello world")
+})
 const {Client,GatewayIntentBits} = require('discord.js');
 const client = new Client({intents:[
 	GatewayIntentBits.Guilds,
@@ -48,3 +51,4 @@ client.on('messageCreate',async function (message,channelID){
 
 client.login(process.env.DISCORD_TOKEN);
 console.log("ChatGpt Bot is Now Online");
+app.listen(3000);
