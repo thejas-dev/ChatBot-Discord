@@ -26,6 +26,7 @@ client.on('messageCreate',async function (message,channelID){
 		if(message.author.bot || !message.content.toLowerCase().includes('thejas') ) return;
 		
 		// message.channel.startTyping();
+		console.log(message.content)
 	
 		const response = await openai.createCompletion({
 		  model: "text-davinci-003",
@@ -51,4 +52,6 @@ client.on('messageCreate',async function (message,channelID){
 
 client.login(process.env.DISCORD_TOKEN);
 console.log("ChatGpt Bot is Now Online");
-app.listen(3000);
+app.listen(3000,()=>{
+	console.log("Port Listening and server started")
+});
