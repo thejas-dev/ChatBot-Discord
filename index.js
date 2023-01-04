@@ -20,7 +20,7 @@ const openai = new OpenAIApi(configuration);
 
 client.on('messageCreate',async function (message,channelID){
 	try{
-		if(message.author.bot) return;
+		if(message.author.bot || !message.content.toLowerCase().includes('thejas') ) return;
 		
 		// message.channel.startTyping();
 	
