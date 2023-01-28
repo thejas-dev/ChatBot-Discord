@@ -51,7 +51,7 @@ client.on('messageCreate',async function (message,channelID){
 		});
 		message.reply(response.data.choices[0].text)
 		
-		message.reply({content:`Your Prompt Image`,files:[response.data.data[0].url]});
+		
 		
 		
 		
